@@ -8,12 +8,14 @@
 		font-style: #{$style};
 	}
 }
+// import
 @import 'reset';
 @import 'variables';
 @import 'fonts';
 @import 'header';
 @import 'intro';
 @import 'sidebar';
+@import 'services';
 
 // general
 body,
@@ -28,4 +30,10 @@ html {
 }
 .hidden {
 	display: none;
+}
+.container{
+	max-width: 1230px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
 }
