@@ -9,6 +9,9 @@
 		background-image: url('../img/back-1.jpg');
 		z-index: -1;
 		background-size: cover;
+		@media (max-width: 768px) {
+			display: none;
+		}
 	}
 	.intro__back-second {
 		position: absolute;
@@ -20,6 +23,9 @@
 		z-index: -1;
 		background-size: cover;
 		background-repeat: no-repeat;
+		@media (max-width: 768px) {
+			width: 100%
+		}
 		.intro__back_wrapper {
 			position: relative;
 			height: 105vh;
@@ -33,7 +39,24 @@
 				transform: rotate(90deg);
 				position: absolute;
 				top: 40vh;
-				right: 20%;
+				right: calc(41% - 120px);
+				@media (max-width: 768px) {
+					top: 60vh;
+					right: 0;
+				}
+			}
+			.line{
+				height: 50px;
+				width: 4px;
+				display: flex;
+				background-color: $color-brown;
+				opacity: 1;
+				position: absolute;
+				top: calc(105vh - 25px);
+				right:calc(41% - 2px);
+				@media (max-width: 768px) {
+					right: 10.5vh;
+				}
 			}
 			.intro__back_share {
 				position: absolute;
@@ -63,19 +86,38 @@
 	height: 100vh;
 	.intro_inner {
 		height: 450px;
+		@media (max-width: 940px) {
+			height: 300px;
+		}
 		.intro__title {
 			font-family: $font-ProximaBold;
 			font-size: 6.66rem;
 			color: $color-brown;
 			text-transform: uppercase;
 			letter-spacing: 2.05rem;
+			@media (max-width: 940px) {
+				font-size:4.5rem;
+			}
+			@media (max-width: 480px) {
+				font-size:4.5rem;
+				letter-spacing: 0.5rem;
+			}
+			@media (max-width: 380px) {
+				font-size:3.5rem;
+			}
 		}
 	}
 	.intro__link {
 		margin-top: 60px;
+		@media (max-width: 940px) {
+			margin-top: 30px;
+		}
 	}
 	.intro__scroll {
 		margin-top: 70px;
+		@media (max-width: 940px) {
+			margin-top: 40px;
+		}
 	}
 }
 // link
@@ -83,9 +125,23 @@
 	border: 2px solid $color-white;
 	width: 334px;
 	padding: 22px 0px 22px 80px;
+	@media (max-width: 940px) {
+		padding: 15px 0px 15px 80px;
+	}
+	@media (max-width: 480px) {
+		padding: 10px -30px 10px 30px;
+	}
+	@media (max-width: 380px) {
+		padding:10px 30px;
+		width: 200px; 
+	}
 	.link_inner {
 		display: flex;
 		align-items: center;
+		@media (max-width: 380px) {
+			flex-direction: column;
+			align-items:flex-start;
+		}
 		.link__item {
 			font-family: $font-ProximaBold;
 			text-transform: uppercase;
@@ -95,6 +151,9 @@
 		}
 		.link__arrow {
 			margin-left: 8px;
+			@media (max-width: 380px) {
+				margin-left: 0;
+			}
 			&::before {
 				display: block;
 				content: '';

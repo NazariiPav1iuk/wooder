@@ -1,7 +1,16 @@
 .sidebar {
 	position: fixed;
 	top: 35%;
-	left: 19%;
+	left: calc(50% - 38%);
+	@media (max-width: 1240px) {
+		left:3%;
+	}
+	@media (max-width: 768px) {
+		left:0%;
+	}
+	@media (max-width: 650px) {
+		display: none;
+	}
 	.sidebar_inner {
 		.sidebar__current {
 			width: 100px;
@@ -10,6 +19,9 @@
 			color: $color-brown;
 			letter-spacing: 0.3rem;
 			transform: rotate(90deg);
+			@media (max-width: 768px) {
+				font-size: 2.5rem;
+			}
 			&::before {
 				display: block;
 				content: '';
@@ -17,10 +29,18 @@
 				width: 50px;
 				background-color: $color-brown;
 				transform: translate3d(-85px, 29px, 0px);
+				@media (max-width: 768px) {
+					height: 2px;
+					width: 30px;
+					transform: translate3d(-40px, 18px, 0px);
+				}
 			}
 		}
 		.sidebar__controls {
 			margin-top: 65px;
+			@media (max-width: 768px) {
+				margin-top: 20px;
+			}
 		}
 	}
 }
