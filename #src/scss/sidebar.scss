@@ -1,15 +1,12 @@
 .sidebar {
 	position: fixed;
 	top: 35%;
-	left: calc(50% - 38%);
+	left: calc(50% - 42%);
 	z-index: 10;
 	@media (max-width: 1240px) {
-		left:3%;
+		left: 3%;
 	}
 	@media (max-width: 768px) {
-		left:0%;
-	}
-	@media (max-width: 650px) {
 		display: none;
 	}
 	.sidebar_inner {
