@@ -2,6 +2,7 @@
 	position: fixed;
 	top: 35%;
 	left: calc(50% - 38%);
+	z-index: 10;
 	@media (max-width: 1240px) {
 		left:3%;
 	}
