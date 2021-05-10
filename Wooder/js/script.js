@@ -29,4 +29,44 @@ window.addEventListener('DOMContentLoaded', () => {
 			});
 		});
 	});
+	// Tabs
+	const tabsOverlay = document.querySelectorAll('.videos-item_overlay'),
+        tabsContent = document.querySelectorAll('.video-item'),
+		tabs = document.querySelectorAll('.videos-item'),
+        tabsParent = document.querySelector('.videos-bar');
+
+    function hideTabContent(){
+        tabsContent.forEach(item => {
+            item.classList.add('hide');
+            item.classList.remove('show');
+        });
+        tabs.forEach(item => {
+            item.classList.remove('videos-item_active');
+        });
+    }
+
+    function showTabContent(i = 0){
+        tabsContent[i].classList.add('show');
+        tabsContent[i].classList.remove('hide');
+        tabs[i].classList.add('videos-item_active');
+    }
+
+    hideTabContent();
+    showTabContent();
+
+    tabsParent.addEventListener('click', (e) => {
+        const target = e.target;
+
+        if(target && target.classList.contains('videos-item_overlay')){
+            tabsOverlay.forEach((item, i) => {
+                if(target == item) {
+                    hideTabContent();
+                    showTabContent(i); 
+                }
+            });
+        }
+    });
+	// Video-button
+
 });
+

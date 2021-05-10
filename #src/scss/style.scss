@@ -17,6 +17,9 @@
 @import 'sidebar';
 @import 'services';
 @import 'videos';
+@import 'video';
+@import 'about';
+@import 'footer';
 
 // general
 body,
@@ -49,4 +52,10 @@ html {
 	@media (max-width: 768px) {
 		padding: 0 15px;
 	}
+}
+.hide{
+	display: none;
+}
+.show{
+	display: block;
 }
