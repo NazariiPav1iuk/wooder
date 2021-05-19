@@ -5,9 +5,6 @@
 	position: relative;
 	padding: 80px 5%;
 	overflow: hidden;
-    &__inner {
-       
-    }
 }
 .video-back {
     .icon {
@@ -33,7 +30,7 @@
     
     .video-subscribe {
         display: flex;
-        height: 730px;
+        height: 730px; 
         align-items: center;
         @media (max-width: 1120px) {
             height:500px;
@@ -42,41 +39,45 @@
             height:400px;
         }
 
-        .video-content{
-            @media (max-width: 650px) {
-                text-align: center;
-                margin-bottom: 100px;
-            }
-
-            &__title {
-                max-width: 510px;
-                font-family: $font-ProximaBold;
-                font-size: 3.2rem;
-                color: $color-brown;
-                text-transform: uppercase;
-                letter-spacing: 0.08rem;
-                line-height: 4rem;
-                @media (max-width: 840px) {
-                    font-size:2.5rem ;
-                }
-                @media (max-width: 480px) {
-                    font-size:2rem ;
-                    width: 100%;
-                }
-            }
-    
-            &__subtitle {
-                max-width: 405px;
-                color: $color-white;
-                line-height: 1.66rem;
-                margin-top: 40px;
+        .video-subscribe_wrapper{
+            display: flex;
+            .video-content{
                 @media (max-width: 650px) {
                     text-align: center;
-                    max-width: 90%;
-                    margin: 40px auto;
+                    margin-bottom: 100px;
+                }
+    
+                &__title {
+                    max-width: 510px;
+                    font-family: $font-ProximaBold;
+                    font-size: 3.2rem;
+                    color: $color-brown;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08rem;
+                    line-height: 4rem;
+                    @media (max-width: 840px) {
+                        font-size:2.5rem ;
+                    }
+                    @media (max-width: 480px) {
+                        font-size:2rem ;
+                        width: 100%;
+                    }
+                }
+        
+                &__subtitle {
+                    max-width: 405px;
+                    color: $color-white;
+                    line-height: 1.66rem;
+                    margin-top: 40px;
+                    @media (max-width: 650px) {
+                        text-align: center;
+                        max-width: 90%;
+                        margin: 40px auto;
+                    }
                 }
             }
         }
+        
         .video-btn {
             border: 2px solid $color-white;
             display: flex;
@@ -122,7 +123,7 @@
         flex-direction: column;
         align-items: flex-end;
         margin-right: 20px;
-        transform: translateY(-95px);
+   
         @media (max-width: 650px) {
             display: none;
         }
@@ -144,6 +145,9 @@
        video{
             width: 100%;
        }
+    }
+    .video-show{
+        display: block;
     }
 }
 

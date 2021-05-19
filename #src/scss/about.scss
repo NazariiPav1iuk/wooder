@@ -1,5 +1,10 @@
 .about {
 	overflow: hidden;
+	.container-right{
+		@media (max-width: 440px) {
+			padding: 0;
+		}
+	}
 	&__inner {
 		display: flex;
 		align-items: center;
