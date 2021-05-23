@@ -142,6 +142,10 @@
     .video-watch {
         display: none;
         width: 100%;
+        margin-top: -100px;
+        @media (max-width: 1120px) {
+            margin-top: 0;
+        }
        video{
             width: 100%;
        }

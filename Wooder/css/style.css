@@ -124,6 +124,7 @@ h6 {
 
 .header .header_inner .header__burger {
   width: 90px;
+  z-index: 6;
 }
 
 .header .header_inner .header__navigation {
@@ -160,6 +161,7 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   padding: 20px 120px 20px 20px;
+  z-index: 1;
 }
 
 .burger .burger_wrapper:hover .burger__name {
@@ -174,6 +176,7 @@ h6 {
 .burger .burger_wrapper .burger__icon {
   margin-right: 12px;
   height: 40px;
+  z-index: -1;
 }
 
 .burger .burger_wrapper .burger__icon span {
@@ -210,6 +213,7 @@ h6 {
   font-family: "ProximaNova-Bold";
   text-transform: uppercase;
   color: #888887;
+  z-index: -1;
 }
 
 .burger .burger__nav_popup {
@@ -219,13 +223,14 @@ h6 {
   left: 0;
   top: 0;
   display: none;
+  z-index: -2;
 }
 
 .burger .burger__nav_popup .burger__nav {
   position: absolute;
-  width: 300px;
-  height: 300px;
-  padding: 25px 25px;
+  width: 25%;
+  height: 99vh;
+  padding: 100px 25px 25px 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,9 +239,7 @@ h6 {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: rgba(0, 0, 0, 0.9);
-  z-index: 6;
-  top: 70px;
-  left: 27px;
+  top: -1vh;
 }
 
 .burger .burger__nav_popup .burger__nav .nav__link {
@@ -258,7 +261,7 @@ h6 {
 
 .burger .active-burger {
   background-color: black;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .burger .burger_wrapper.active-burger .burger__name {
@@ -313,6 +316,7 @@ h6 {
 }
 
 .lang .lang_wrapper {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -331,10 +335,38 @@ h6 {
   cursor: pointer;
 }
 
+.lang .lang_wrapper .lang__info-block {
+  color: #000;
+  font-size: 0.8rem;
+  position: absolute;
+  width: 150px;
+  right: 20px;
+  top: 50px;
+  line-height: 1.3rem;
+  letter-spacing: 0.01rem;
+  background-color: #bea67c;
+  padding: 0 10px;
+  opacity: 0.7;
+  display: none;
+  border-radius: 5px;
+}
+
+.lang .lang_wrapper .lang__info:hover .lang__info-block {
+  display: block;
+}
+
+.lang .lang_wrapper .lang__info .active-btn {
+  fill: #bea67c;
+}
+
 .lang .lang_wrapper .lang__switcher {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.lang .lang_wrapper .show-info {
+  display: block;
 }
 
 .switcher {
@@ -366,8 +398,8 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  top: 60px;
-  right: 16px;
+  top: 40px;
+  right: -10px;
 }
 
 .switcher .switcher_inner .switcher__item {
@@ -417,7 +449,7 @@ h6 {
   position: absolute;
   left: 0;
   top: 0;
-  width: 60%;
+  width: 70vw;
   height: 100vh;
   background-image: url("../img/back-1.jpg");
   z-index: -1;
@@ -428,7 +460,7 @@ h6 {
   position: absolute;
   right: 0;
   top: 0;
-  width: 45%;
+  width: 45vw;
   height: 105vh;
   background-image: url("../img/back-2.jpg");
   z-index: -1;
@@ -1329,6 +1361,7 @@ h6 {
 .video-item .video-watch {
   display: none;
   width: 100%;
+  margin-top: -100px;
 }
 
 .video-item .video-watch video {
@@ -1433,7 +1466,9 @@ h6 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  Align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 20px 0;
@@ -1441,7 +1476,7 @@ h6 {
 
 .footer-date {
   color: #ffff;
-  opacity: .2;
+  opacity: 0.2;
   text-transform: uppercase;
 }
 
@@ -1451,11 +1486,16 @@ h6 {
 
 .footer-author {
   color: #ffff;
-  opacity: .4;
+  opacity: 0.4;
+}
+
+.footer-author a {
+  color: #ffff;
+  opacity: 0.7;
 }
 
 .footer-author span {
-  opacity: .3;
+  opacity: 0.3;
 }
 
 body,
@@ -1564,6 +1604,10 @@ html {
     width: 300px;
   }
 
+  .burger .burger__nav_popup .burger__nav {
+    width: 35%;
+  }
+
   .sidebar {
     left: 3%;
   }
@@ -1617,6 +1661,10 @@ html {
 
   .video-item .video-subscribe {
     height: 500px;
+  }
+
+  .video-item .video-watch {
+    margin-top: 0;
   }
 }
 
@@ -1736,6 +1784,15 @@ html {
 }
 
 @media (max-width: 768px) {
+  .burger .burger__nav_popup .burger__nav {
+    width: 45%;
+  }
+
+  .burger .burger__nav_popup .burger__nav {
+    width: 100%;
+    opacity: 1;
+  }
+
   .intro__back .intro__back-first {
     display: none;
   }
@@ -1863,11 +1920,6 @@ html {
     padding: 0px;
   }
 
-  .burger .burger__nav_popup .burger__nav {
-    width: 100%;
-    opacity: 1;
-  }
-
   .intro .intro_inner .intro__title {
     font-size: 4.5rem;
     letter-spacing: 0.5rem;
@@ -1894,6 +1946,16 @@ html {
 
   .about .container-right {
     padding: 0;
+  }
+
+  .about-img img {
+    width: 100%;
+    padding: 0 5px;
+  }
+
+  .about-content {
+    -ms-flex-item-align: center;
+        align-self: center;
   }
 
   .about-content__lines {
